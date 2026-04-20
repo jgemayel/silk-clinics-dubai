@@ -1723,21 +1723,27 @@ address a:hover { color: var(--accent); }
   filter: brightness(0) invert(1);
 }
 
-/* Hero image (homepage) */
+/* Hero image (homepage) - absolutely fills .hero-visual which already has aspect-ratio 4/5 */
 .hero-visual { position: relative; }
 .hero-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius);
-  box-shadow: 0 20px 60px rgba(20, 20, 19, .12);
+  object-position: center;
+  z-index: 0;
 }
+.hero-visual-inner { z-index: 2; }
+.hero-visual::before { z-index: 1; pointer-events: none; }
 
 /* Page hero images (interior pages) */
 .page-hero-image {
   width: 100%;
-  max-height: 480px;
+  aspect-ratio: 21 / 9;
   object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: var(--radius);
   margin-top: 40px;
   box-shadow: 0 16px 48px rgba(20, 20, 19, .08);
@@ -1747,8 +1753,9 @@ address a:hover { color: var(--accent); }
 .service-card { overflow: hidden; padding: 0; }
 .service-image {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 .service-card .service-index,
@@ -1762,8 +1769,9 @@ address a:hover { color: var(--accent); }
 .featured-card { overflow: hidden; padding: 0; }
 .featured-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 .featured-card .featured-tag { margin-left: 32px; margin-right: 32px; margin-top: 28px; }
@@ -1777,16 +1785,20 @@ address a:hover { color: var(--accent); }
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius);
+  display: block;
   margin-bottom: 24px;
 }
 
 /* Feature visual (popular-treatments split sections) */
 .feature-visual img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius);
+  display: block;
   margin-bottom: 20px;
 }
 .feature-stat-row {
@@ -1917,9 +1929,11 @@ address a:hover { color: var(--accent); }
 }
 .clinic-showcase img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--radius);
+  display: block;
 }
 
 /* Responsive */
@@ -1931,13 +1945,12 @@ address a:hover { color: var(--accent); }
   .team-strip { grid-template-columns: repeat(3, 1fr); }
   .clinic-showcase { grid-template-columns: 1fr; }
   .feature-stat-row { grid-template-columns: 1fr 1fr; }
-  .service-image { margin: -24px -24px 20px -24px; width: calc(100% + 48px); }
 }
 @media (max-width: 600px) {
   .team-grid { grid-template-columns: 1fr; }
   .team-strip { grid-template-columns: repeat(2, 1fr); }
   .brand-logo { height: 36px; }
-  .page-hero-image { max-height: 320px; margin-top: 28px; }
+  .page-hero-image { aspect-ratio: 16 / 10; margin-top: 28px; }
   .feature-stat .stat-value { font-size: 1.7rem; }
 }
 
