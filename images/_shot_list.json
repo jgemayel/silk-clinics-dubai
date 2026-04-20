@@ -1,0 +1,69 @@
+{
+  "style_lock": "Editorial, magazine-quality aesthetic clinic photography. Cream and warm off-white background with soft Silk green accent #B2D234 sparingly placed. Natural daylight, gentle shadows, matte skin finish, subtle film grain. No text, no watermarks, no logos. Ultra-sharp focus, shallow depth of field. Clean, minimal, confident, never clinical-sterile. Dubai luxury wellness feel.",
+  "shots": [
+    {
+      "name": "home-hero",
+      "prompt": "A woman in her early thirties with luminous, glowing skin photographed in three-quarter profile against a cream and sage green blurred background. She has soft natural waves, minimal makeup, a serene half-smile, and is lit by soft morning daylight pouring through a tall window. Close crop from chest up. Skin texture is visible, pores are real, no retouching. A single sage green leaf is faintly blurred in the foreground. Editorial fashion photography quality, shot on medium format film, Hasselblad look, bokeh background."
+    },
+    {
+      "name": "about-mood",
+      "prompt": "Still-life of a cream Carrara marble counter at a luxury skin clinic. On it: a single small white orchid in a minimalist ceramic vase, one unbranded amber glass serum bottle, folded white linen, a sage green silk ribbon trailing. Natural soft daylight from the left. Warm neutral palette. Crisp, editorial, aspirational. No text, no labels, no logos."
+    },
+    {
+      "name": "cat-aesthetic",
+      "prompt": "Close-up photograph of a gloved doctor's hand holding a slim precision tool gently near a woman's temple during a cosmetic aesthetic assessment. Woman's eyes closed, relaxed. Warm cream background. Soft natural daylight. The mood is calm and controlled. No visible needles or puncture, no blood. Editorial clinical beauty photography."
+    },
+    {
+      "name": "cat-skin",
+      "prompt": "Top-down photograph of a woman's face on a white linen pillow, eyes closed, during a luxury facial. A gloved therapist's hand sweeps a soft-lit laser handpiece above her cheek, the device glowing softly. Cream surroundings, subtle sage green accent on the handpiece cable. Editorial aesthetic clinic photography, peaceful, ultra clean."
+    },
+    {
+      "name": "cat-injectables",
+      "prompt": "Side profile of a woman's serene face with eyes closed as a gloved doctor's hand approaches her cheek with a very slim cosmetic device. Only the doctor's gloved fingers and the handle are visible. Warm cream background, soft daylight. No needle tip visible, no blood, no redness. Editorial aesthetic clinic photography."
+    },
+    {
+      "name": "cat-hair",
+      "prompt": "Close-up of the back of a woman's head with long healthy dark hair being gently examined by a doctor's gloved hand holding a dermoscope. Cream background. Soft daylight from the side. Warm, luxurious mood. Editorial medical aesthetic photography."
+    },
+    {
+      "name": "cat-dental",
+      "prompt": "Close-up portrait of a woman smiling with natural, bright, perfect teeth. Soft cream lighting, warm tones. Just lips and teeth in focus, mid-frame. No braces, no branding. Editorial beauty photography, tasteful, luxury dental clinic feel."
+    },
+    {
+      "name": "cat-wellness",
+      "prompt": "A minimalist wellness drip lounge with a reclining cream leather chair, a slim stainless steel IV stand holding a transparent bag of fluid, sage green plants in the blurred background. Morning daylight through sheer curtains. No person, no text. Aspirational, serene, Dubai luxury wellness clinic interior."
+    },
+    {
+      "name": "cat-diagnostics",
+      "prompt": "A woman in her thirties sits calmly with eyes closed while a cream and sage green medical skin-analysis device scans her face from close range. The device has a soft blue-white light. Warm cream background, soft daylight. Editorial clinical beauty photography. No text, no logos."
+    },
+    {
+      "name": "sig-scarlet",
+      "prompt": "Close-up of a woman's cheek during a radio frequency microneedling treatment. A sleek white handheld RF device is gently touching her jawline, a faint blue-sage glow emanates. Her eyes are closed, skin is glowing. Cream and sage green palette. Editorial aesthetic clinic photography. No blood, no redness, no text."
+    },
+    {
+      "name": "sig-boosters",
+      "prompt": "Side view close-up of a woman's cheek and jawline with delicate tiny surface injection marks being gently addressed by a gloved hand. She is serene, eyes closed. The lighting is soft and flattering. Warm cream background with faint sage green bokeh. Luxury aesthetic clinic editorial photography. No blood, nothing graphic."
+    },
+    {
+      "name": "sig-biostim",
+      "prompt": "A makeup artist-like gloved hand marking a woman's cheekbone with a fine white surgical pencil to plan a treatment. Her eyes closed, serene expression. Warm cream background, soft window daylight. Editorial aesthetic clinic photography, elegant, clean."
+    },
+    {
+      "name": "offer-banner",
+      "prompt": "Still-life composition on cream Carrara marble: a sage green silk ribbon tied in a gentle knot, a single unbranded amber glass bottle, two slim white candles, and a white orchid stem. Top-down. Soft natural daylight. Warm, luxurious, editorial. Space for text overlay on the left half of the frame. No text in the image itself."
+    },
+    {
+      "name": "botox-hero",
+      "prompt": "Three-quarter profile of a woman in her late twenties with glowing, smooth skin. Her eyes are closed serenely. A gloved doctor's hand holds a precision tool near her temple, off-frame. Cream linen background. Soft window daylight. Ultra clean, editorial aesthetic clinic photography. No needles visible, no blood, no redness."
+    },
+    {
+      "name": "clinic-interior",
+      "prompt": "Wide photograph of a luxury Dubai aesthetic clinic reception area. Cream marble floor, warm oak wood paneling, a curved cream velvet bench, a single sage green leafy plant, a minimalist reception desk in the background with subtle brass accents, tall floor-to-ceiling window with sheer cream curtains letting in soft daylight. No people, no logos, no text. Interior design photography, editorial, peaceful, aspirational."
+    },
+    {
+      "name": "treatment-room",
+      "prompt": "Photograph of a peaceful luxury aesthetic treatment room. A cream leather treatment bed dressed with white linen, a minimalist sage green accent pillow, a sleek white device on a slim trolley beside it, warm oak cabinetry, a single potted green plant in the corner, soft window daylight. No people, no text, no logos. Interior design editorial photography, Dubai luxury wellness clinic."
+    }
+  ]
+}

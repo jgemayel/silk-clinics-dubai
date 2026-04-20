@@ -1705,3 +1705,229 @@ address a:hover { color: var(--accent); }
   .category-nav { gap: 8px; }
   .category-nav a { padding: 6px 10px; font-size: 10.5px; letter-spacing: .15em; }
 }
+
+/* =========================================================
+   v2.1 — Image wiring, team grid, page hero images
+   ========================================================= */
+
+/* Brand logo in header */
+.brand { display: inline-flex; align-items: center; gap: 8px; }
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+.brand-logo-dark {
+  height: 48px;
+  filter: brightness(0) invert(1);
+}
+
+/* Hero image (homepage) */
+.hero-visual { position: relative; }
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(20, 20, 19, .12);
+}
+
+/* Page hero images (interior pages) */
+.page-hero-image {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-top: 40px;
+  box-shadow: 0 16px 48px rgba(20, 20, 19, .08);
+}
+
+/* Service cards (homepage) */
+.service-card { overflow: hidden; }
+.service-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin: -32px -32px 24px -32px;
+  width: calc(100% + 64px);
+}
+
+/* Featured cards (homepage signature treatments) */
+.featured-card { overflow: hidden; padding: 0; }
+.featured-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.featured-card .featured-body { padding: 28px 32px 32px; }
+.featured-card h3, .featured-card p, .featured-card .link-arrow { padding: 0; }
+
+/* Treatment category images */
+.category-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+
+/* Feature visual (popular-treatments split sections) */
+.feature-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+.feature-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.feature-stat {
+  background: var(--bg-alt);
+  padding: 24px 20px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+.feature-stat.alt {
+  background: var(--accent-tint);
+}
+.feature-stat .stat-value {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.feature-stat .stat-label {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* Blog images */
+.blog-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden; padding: 0; align-items: stretch; }
+.blog-feature-image {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+.blog-feature-body { padding: 48px 56px; display: flex; flex-direction: column; justify-content: center; }
+.blog-card { overflow: hidden; padding: 0; }
+.blog-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.blog-card .blog-tag,
+.blog-card h3,
+.blog-card p,
+.blog-card .blog-read {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.blog-card .blog-tag { margin-top: 24px; }
+.blog-card .blog-read { margin-bottom: 24px; }
+
+/* Team section (homepage) */
+.team {
+  padding-top: 0;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(20, 20, 19, .08);
+}
+.team-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+}
+.team-card figcaption {
+  padding: 22px 26px 26px;
+}
+.team-card h4 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.team-card figcaption span {
+  font-size: 11.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  font-weight: 500;
+  display: block;
+}
+
+.team-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 56px;
+}
+.team-strip img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius);
+  filter: grayscale(15%);
+  transition: filter .3s var(--ease);
+}
+.team-strip img:hover {
+  filter: grayscale(0%);
+}
+
+/* Clinic showcase (homepage) */
+.clinic-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.clinic-showcase img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .blog-feature { grid-template-columns: 1fr; }
+  .blog-feature-image { min-height: 240px; }
+  .blog-feature-body { padding: 32px 28px; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .team-strip { grid-template-columns: repeat(3, 1fr); }
+  .clinic-showcase { grid-template-columns: 1fr; }
+  .feature-stat-row { grid-template-columns: 1fr 1fr; }
+  .service-image { margin: -24px -24px 20px -24px; width: calc(100% + 48px); }
+}
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .team-strip { grid-template-columns: repeat(2, 1fr); }
+  .brand-logo { height: 36px; }
+  .page-hero-image { max-height: 320px; margin-top: 28px; }
+  .feature-stat .stat-value { font-size: 1.7rem; }
+}
