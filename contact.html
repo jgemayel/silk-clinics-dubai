@@ -107,6 +107,14 @@
         </select>
       </div>
 
+      <div class="field">
+        <label for="b-doctor">Doctor</label>
+        <select id="b-doctor">
+          <option value="Any available doctor">Any available doctor</option>
+        </select>
+        <p class="field-hint" id="doctorHint">We'll match you with the next available specialist.</p>
+      </div>
+
       <div class="field-row">
         <div class="field">
           <label for="b-name">Full name</label>
@@ -247,6 +255,8 @@
 (function () {
   var CLINIC_WA = "971521881437";
   var treatment = document.getElementById("b-treatment");
+  var doctor = document.getElementById("b-doctor");
+  var doctorHint = document.getElementById("doctorHint");
   var name = document.getElementById("b-name");
   var phone = document.getElementById("b-phone");
   var notes = document.getElementById("b-notes");
@@ -256,6 +266,73 @@
   var hoursNote = document.getElementById("hoursNote");
   var bookBtn = document.getElementById("bookBtn");
   var selectedDate = null, selectedTime = null;
+
+  // Treatment to qualified doctors map (all lists are in recommended order)
+  var AESTHETIC_DOCS = [
+    { id: "Dr Ahmed (Aesthetics)", title: "Medical Director, Aesthetics" },
+    { id: "Dr Suzanne", title: "Aesthetic Physician" }
+  ];
+  var DENTAL_DOCS = [
+    { id: "Dr Ahmed (Dentistry)", title: "Specialist Dentist" },
+    { id: "Dr Rigi", title: "Dentist" },
+    { id: "Dr Roshanak", title: "Dentist" },
+    { id: "Dr Karishma", title: "Prosthodontist" }
+  ];
+  var PROSTHO_DOCS = [
+    { id: "Dr Ahmed (Dentistry)", title: "Specialist Dentist" },
+    { id: "Dr Karishma", title: "Prosthodontist" }
+  ];
+  var GENERAL_DOCS = AESTHETIC_DOCS.concat(DENTAL_DOCS);
+
+  var TREATMENT_DOCTORS = {
+    "General consultation":    GENERAL_DOCS,
+    "Botox":                   AESTHETIC_DOCS,
+    "Dermal Fillers":          AESTHETIC_DOCS,
+    "Profhilo":                AESTHETIC_DOCS,
+    "Exosomes":                AESTHETIC_DOCS,
+    "Scarlet S RF":            AESTHETIC_DOCS,
+    "HydraFacial":             AESTHETIC_DOCS,
+    "Chemical Peel":           AESTHETIC_DOCS,
+    "CO2 Laser":               AESTHETIC_DOCS,
+    "Microneedling":           AESTHETIC_DOCS,
+    "Laser Hair Removal":      AESTHETIC_DOCS,
+    "Veneers":                 PROSTHO_DOCS,
+    "Invisalign":              DENTAL_DOCS,
+    "Teeth Whitening":         DENTAL_DOCS,
+    "Dental Consultation":     DENTAL_DOCS
+  };
+
+  function rebuildDoctors() {
+    var list = TREATMENT_DOCTORS[treatment.value] || GENERAL_DOCS;
+    var prev = doctor.value;
+    doctor.innerHTML = "";
+    var any = document.createElement("option");
+    any.value = "Any available doctor";
+    any.textContent = "Any available doctor";
+    doctor.appendChild(any);
+    list.forEach(function (d) {
+      var o = document.createElement("option");
+      o.value = d.id;
+      o.textContent = d.id + " — " + d.title;
+      doctor.appendChild(o);
+    });
+    // Keep previous selection if still valid
+    var stillValid = [].some.call(doctor.options, function (o) { return o.value === prev; });
+    doctor.value = stillValid ? prev : "Any available doctor";
+    updateDoctorHint();
+  }
+
+  function updateDoctorHint() {
+    if (doctor.value === "Any available doctor") {
+      doctorHint.textContent = "We'll match you with the next available specialist qualified for this treatment.";
+    } else {
+      var opt = doctor.options[doctor.selectedIndex];
+      doctorHint.textContent = "You'll be seen by " + opt.textContent + ".";
+    }
+  }
+
+  treatment.addEventListener("change", rebuildDoctors);
+  doctor.addEventListener("change", updateDoctorHint);
 
   // Hours: Mon-Thu, Sat, Sun 10:00 to 20:00; Fri 14:00 to 21:00
   function slotsFor(date) {
@@ -323,6 +400,7 @@
     var msg =
       "Hi Silk Clinics, I would like to book an appointment.\n\n" +
       "Treatment: " + treatment.value + "\n" +
+      "Doctor: " + doctor.value + "\n" +
       "Date: " + selectedDate + "\n" +
       "Time: " + selectedTime + "\n" +
       (name.value ? "Name: " + name.value + "\n" : "") +
@@ -333,6 +411,7 @@
     window.open(url, "_blank");
   });
 
+  rebuildDoctors();
   buildDates();
 })();
 </script>
