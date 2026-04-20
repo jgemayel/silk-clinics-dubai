@@ -12,6 +12,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="images/real/Silk-logo-digital-3D.webp">
+<meta property="og:title" content="Book a visit | Silk Clinics Dubai">
+<meta property="og:description" content="Book a doctor-led consultation at Silk Clinics, Dubai Healthcare City. WhatsApp confirmation within minutes.">
+<meta property="og:image" content="images/generated/clinic-interior.jpg">
+<meta property="og:type" content="website">
 </head>
 <body>
 
@@ -77,40 +82,99 @@
       </div>
     </div>
 
-    <form class="contact-form" action="#" method="post">
-      <h2>Send a message</h2>
+    <div class="booking-widget">
+      <h2>Book your visit</h2>
+      <p class="booking-lead">Pick a date and time. We'll confirm by WhatsApp within minutes during clinic hours.</p>
+
       <div class="field">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="field-row">
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-      </div>
-      <div class="field">
-        <label for="treatment">Treatment of interest</label>
-        <select id="treatment" name="treatment">
-          <option>General consultation</option>
-          <option>Aesthetic medicine</option>
-          <option>Skin & laser</option>
-          <option>Dentistry</option>
-          <option>Popular treatments</option>
+        <label for="b-treatment">Treatment</label>
+        <select id="b-treatment">
+          <option value="General consultation">General consultation (free)</option>
+          <option value="Botox">Botox</option>
+          <option value="Dermal Fillers">Dermal Fillers</option>
+          <option value="Profhilo">Profhilo</option>
+          <option value="Exosomes">Exosomes</option>
+          <option value="Scarlet S RF">Scarlet S RF microneedling</option>
+          <option value="HydraFacial">HydraFacial</option>
+          <option value="Chemical Peel">Chemical Peel</option>
+          <option value="CO2 Laser">CO2 Laser</option>
+          <option value="Microneedling">Microneedling</option>
+          <option value="Laser Hair Removal">Laser Hair Removal</option>
+          <option value="Veneers">Veneers</option>
+          <option value="Invisalign">Invisalign</option>
+          <option value="Teeth Whitening">Teeth Whitening</option>
+          <option value="Dental Consultation">Dental Consultation</option>
         </select>
       </div>
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send message</button>
-      <p class="form-note">Your information stays with Silk. We don't share or sell patient data.</p>
-    </form>
 
+      <div class="field-row">
+        <div class="field">
+          <label for="b-name">Full name</label>
+          <input type="text" id="b-name" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="b-phone">Phone (optional)</label>
+          <input type="tel" id="b-phone" placeholder="+971 5..">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Pick a date</label>
+        <div class="date-strip" id="dateStrip" role="listbox" aria-label="Pick a date"></div>
+      </div>
+
+      <div class="field" id="timeBlock" hidden>
+        <label>Pick a time</label>
+        <div class="time-grid" id="timeGrid" role="listbox" aria-label="Pick a time"></div>
+        <p class="hours-note" id="hoursNote"></p>
+      </div>
+
+      <div class="field">
+        <label for="b-notes">Notes (optional)</label>
+        <textarea id="b-notes" rows="3" placeholder="Anything our doctor should know."></textarea>
+      </div>
+
+      <button type="button" class="btn btn-primary full" id="bookBtn" disabled>Confirm via WhatsApp</button>
+      <p class="form-note">Your information goes straight to the clinic. We don't share or sell patient data.</p>
+      <p class="form-note alt">Prefer email? <a href="mailto:info@silkclinicsdubai.com?subject=Booking%20request">info@silkclinicsdubai.com</a></p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section block">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Common questions</span>
+      <h2>Before you book.</h2>
+      <p>Quick answers to what most patients ask before their first visit.</p>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>Are consultations really free?</summary>
+        <div class="faq-body">Yes. Our doctors meet you, assess your goals, and give you an honest plan with no pressure to book a treatment that day. We only charge if you proceed with a clinical procedure.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need health insurance to be seen?</summary>
+        <div class="faq-body">No. Aesthetic and most cosmetic dental treatments are self-pay. For medical dental work, we accept most major UAE insurance providers. Bring your card and we'll verify coverage at reception.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Are your doctors DHA licensed?</summary>
+        <div class="faq-body">Every clinician at Silk holds a current Dubai Health Authority license. The clinic itself is licensed and inspected by the DHA, which is required for any provider operating inside Dubai Healthcare City.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What languages do you speak?</summary>
+        <div class="faq-body">English and Arabic are spoken by every doctor. We also have French, Hindi, Urdu, and Russian speaking team members on rotation. Tell us your preference when booking.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I see before and after photos?</summary>
+        <div class="faq-body">Yes, in clinic. UAE regulations restrict where we can post patient before/after images publicly, so we share these in person during your consultation with the patient's written consent on file.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What's your cancellation policy?</summary>
+        <div class="faq-body">Free cancellation up to 4 hours before your appointment via WhatsApp. We don't charge no-show fees on consultations. For booked treatments, a 50% deposit may apply on rescheduling within 24 hours.</div>
+      </details>
+    </div>
   </div>
 </section>
 
@@ -178,6 +242,104 @@
 <a href="https://wa.me/971521881437" class="whatsapp-float" aria-label="WhatsApp us">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.16 1.6 5.98L0 24l6.25-1.64a11.9 11.9 0 0 0 5.79 1.48h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.47-8.42zM12.04 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.71.97.99-3.61-.23-.37a9.83 9.83 0 0 1-1.52-5.26c0-5.46 4.45-9.9 9.92-9.9 2.65 0 5.14 1.03 7.01 2.9a9.84 9.84 0 0 1 2.9 7.02c0 5.47-4.44 9.92-9.92 9.92zm5.44-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.5.07-.77.37-.27.3-1.02 1-1.02 2.42 0 1.42 1.05 2.8 1.2 3 .15.2 2.07 3.17 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.35.19 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
 </a>
+
+<script>
+(function () {
+  var CLINIC_WA = "971521881437";
+  var treatment = document.getElementById("b-treatment");
+  var name = document.getElementById("b-name");
+  var phone = document.getElementById("b-phone");
+  var notes = document.getElementById("b-notes");
+  var dateStrip = document.getElementById("dateStrip");
+  var timeGrid = document.getElementById("timeGrid");
+  var timeBlock = document.getElementById("timeBlock");
+  var hoursNote = document.getElementById("hoursNote");
+  var bookBtn = document.getElementById("bookBtn");
+  var selectedDate = null, selectedTime = null;
+
+  // Hours: Mon-Thu, Sat, Sun 10:00 to 20:00; Fri 14:00 to 21:00
+  function slotsFor(date) {
+    var day = date.getDay(); // 0 Sun .. 6 Sat
+    if (day === 5) return { start: 14, end: 21, label: "Friday hours: 14:00 to 21:00" };
+    return { start: 10, end: 20, label: "Hours: 10:00 to 20:00" };
+  }
+
+  function buildDates() {
+    var today = new Date(); today.setHours(0,0,0,0);
+    var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    for (var i = 0; i < 14; i++) {
+      var d = new Date(today.getTime());
+      d.setDate(today.getDate() + i);
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "date-chip";
+      btn.dataset.iso = d.toISOString().slice(0,10);
+      btn.innerHTML = '<span class="d-day">' + days[d.getDay()] + '</span>' +
+                      '<span class="d-num">' + d.getDate() + '</span>' +
+                      '<span class="d-mon">' + months[d.getMonth()] + '</span>';
+      btn.addEventListener("click", function (ev) { pickDate(this, ev); });
+      dateStrip.appendChild(btn);
+    }
+  }
+
+  function pickDate(btn) {
+    [].forEach.call(document.querySelectorAll(".date-chip"), function (c) { c.classList.remove("active"); });
+    btn.classList.add("active");
+    selectedDate = btn.dataset.iso;
+    buildTimes(new Date(selectedDate + "T00:00:00"));
+    timeBlock.hidden = false;
+    selectedTime = null; updateBtn();
+  }
+
+  function buildTimes(d) {
+    timeGrid.innerHTML = "";
+    var h = slotsFor(d);
+    hoursNote.textContent = h.label;
+    for (var hour = h.start; hour < h.end; hour++) {
+      [0, 30].forEach(function (mm) {
+        var t = String(hour).padStart(2,"0") + ":" + String(mm).padStart(2,"0");
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "time-chip";
+        b.textContent = t;
+        b.addEventListener("click", function () {
+          [].forEach.call(document.querySelectorAll(".time-chip"), function (c) { c.classList.remove("active"); });
+          this.classList.add("active");
+          selectedTime = this.textContent;
+          updateBtn();
+        });
+        timeGrid.appendChild(b);
+      });
+    }
+  }
+
+  function updateBtn() {
+    bookBtn.disabled = !(selectedDate && selectedTime);
+  }
+
+  bookBtn.addEventListener("click", function () {
+    if (!selectedDate || !selectedTime) return;
+    var msg =
+      "Hi Silk Clinics, I would like to book an appointment.\n\n" +
+      "Treatment: " + treatment.value + "\n" +
+      "Date: " + selectedDate + "\n" +
+      "Time: " + selectedTime + "\n" +
+      (name.value ? "Name: " + name.value + "\n" : "") +
+      (phone.value ? "Phone: " + phone.value + "\n" : "") +
+      (notes.value ? "Notes: " + notes.value + "\n" : "") +
+      "\nPlease confirm availability. Thank you.";
+    var url = "https://wa.me/" + CLINIC_WA + "?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  });
+
+  buildDates();
+})();
+</script>
+<div class="sticky-cta" aria-hidden="true">
+  <a href="tel:+971521881437" class="sc-call">Call</a>
+  <a href="contact.html" class="sc-book">Book a visit</a>
+</div>
 
 </body>
 </html>
